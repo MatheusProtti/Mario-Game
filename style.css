@@ -1,0 +1,151 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.gameBoard{
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    border: 2px solid black;
+    position: relative;
+    overflow: hidden;
+    background-color: #87ceeb;
+    margin-top: 50px;
+    /* background: linear-gradient(#87CEEB, #E0F6FF); */
+    /* background-image: url(./img/nuvens_teste2.png);
+    background-size: contain; */
+    /* display: flex;
+    flex-direction:row-reverse;
+    align-items: flex-end; */
+}
+
+.runner{
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: homemCorrida 2.5s infinite linear;
+    /* animation-name: homemCorrida;
+    animation-duration: 3s;
+    animation-fill-mode: infinite;
+    animation-timing-function: linear; */
+
+}
+
+.mario{
+    height: 130px;
+    position: absolute;
+    bottom: 0px;
+    /* animation: marioJump 4s ease-out; */
+    /* animation-duration: 5s;
+    animation-timing-function: linear; */
+}
+
+.jump{
+    animation: marioJump 500ms ease-out;
+}
+
+.chao{
+    height: 50px;
+    background-image: url(./img/chao_tijolo.jpg);
+    width: 100%;
+    margin: 0 auto;
+    animation: chao 0.3s steps(10) infinite;
+}
+
+.nuvem{
+    position: absolute;
+    width: 750px;
+    animation: clouds 5s infinite linear;
+}
+
+.score{
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    border: 3px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#point{
+    font-size: 70px;
+}
+
+h1{
+    text-align: center;
+    padding: 20px 0px 15px 0px;
+}
+
+#gameOver{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    font-size: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+}
+
+#restart{
+    padding: 20px;
+    font-size: 20px;
+    background-color: yellow;
+    border: none;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+@keyframes homemCorrida {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes marioJump {
+    
+    0% {
+        bottom: 0px;
+    }
+
+    40% {
+        bottom: 100px;
+    }
+
+    50% {
+        bottom: 100px;
+    }
+
+    60% {
+        bottom: 100px;
+    }
+
+    100% {
+        bottom: 0px;
+    }
+}
+
+@keyframes clouds {
+    from {
+        right: -750px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes chao {
+    100% { background-position-x: -100px; }
+}
